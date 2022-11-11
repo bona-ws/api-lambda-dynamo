@@ -1,0 +1,23 @@
+service: api
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: dev
+  timeout: 10
+  region: ap-southeast-1
+
+functions:
+  server:
+    handler: handler.server
+    events:
+      - http: ANY /{proxy+}
+      - http: ANY /
+    environment:
+      NODE_ENV: development
+      PORT: 9111
+      DB_ACCESS_KEY: AKIAQMBAP3CEPNWKC7WN
+      DB_SECRET_KEY: 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
+      DB_ENDPOINT: https://dynamodb.ap-southeast-1.amazonaws.com
+      DB_REGION: ap-southeast-1

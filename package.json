@@ -1,0 +1,33 @@
+{
+	"name": "api",
+	"version": "1.0.0",
+	"author": "bona-ws",
+	"engines": {
+		"node": "16.x"
+	},
+	"type": "module",
+	"main": "server.js",
+	"scripts": {
+		"start": "NODE_ENV=development node server.js --use_strict",
+		"deploy": "serverless deploy"
+	},
+	"license": "ISC",
+	"dependencies": {
+		"@aws-sdk/client-dynamodb": "^3.204.0",
+		"ajv": "^8.11.0",
+		"aws-sdk": "^2.1248.0",
+		"cors": "^2.8.5",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"serverless-http": "^3.1.0",
+		"uuid": "^8.3.2"
+	},
+	"devDependencies": {
+		"@types/cors": "^2.8.9",
+		"@types/express": "^4.17.11",
+		"@types/node": "^14.14.22",
+		"@types/uuid": "^8.3.0",
+		"eslint": "^7.19.0",
+		"nodemon": "^2.0.6"
+	}
+}
